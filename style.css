@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+    --primary:#0077b6;
+    --secondary:#48cae4;
+    --black:#333;
+    --white:#fff;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+section{
+    padding: 5rem 7%;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background: var(--primary);
+    border-radius: .5rem;
+    color: var(--white);
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: var(--secondary);
+}
+
+/* header */
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--primary);
+    padding-right: .5rem;
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    color: var(--black);
+    margin: 0 1rem;
+}
+
+.header .navbar a:hover{
+    color: var(--primary);
+}
+
+.header .navbar .btn{
+    margin-top: 0;
+    color: var(--white);
+}
+
+.header .navbar .btn:hover{
+    color: var(--white);
+}
+
+.home{
+    padding: 0;
+}
+
+.home .slide{
+    min-height: 100vh;
+    background-size: cover !important;
+    background-position: center !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+.about .row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6rem;
+}
+
+.about .row .image{
+    flex: 1 1 30rem;
+}
+
+.about .row .image img{
+    width: 100%;
+}
+
+.about .row .content{
+    flex: 1 1 51rem;
+}
+
+.about .row .content h3{
+    font-size: 3.5rem;
+    color: var(--primary);
+    padding: 2rem 0;
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    color: #666;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.reservation {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .reservation p #ac #locker{
+    font-size: 1.8rem;
+    color: var(--primary);
+  }
+  .reservation .heading {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .reservation .heading{
+    color: var(--primary);  
+  }
+  .reservation form {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .reservation label {
+    
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  .reservation label checkbox{
+    display: inline;
+  }
+  
+  .reservation input[type="text"],
+  .reservation input[type="number"],
+  .reservation input[type="date"],
+  .reservation select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .reservation input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .reservation button {
+    background-color: var(--primary);
+    color:var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .reservation button:hover {
+    background-color: var(--secondary);
+  }
+  
+  .reservation h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .reservation p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .reservation span {
+    font-weight: bold;
+  }
+  
+  
+  
+
+

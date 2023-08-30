@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hotel Website</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <link rel="stylesheet" href="style.css">
+   <script>
+      function calculateTotalCost() {
+          const roomRateDelux = 2500;
+          const roomRateSuite = 4000;
+          const acCost = 1000;
+          const lockerCost = 300;
+          const extraPersonCost = 1000;
+
+          const customerName = document.getElementById("customerName").value;
+          const checkInDate = document.getElementById("checkInDate").value;
+          const totalDays = parseInt(document.getElementById("totalDays").value);
+          const totalPersons = parseInt(document.getElementById("totalPersons").value);
+          const roomType = document.getElementById("roomType").value;
+          const acSelected = document.getElementById("ac").checked;
+          const lockerSelected = document.getElementById("locker").checked;
+          const advanceAmount = parseInt(document.getElementById("advanceAmount").value);
+
+          const roomRate = roomType === "Delux Room" ? roomRateDelux : roomRateSuite;
+          const amenitiesCost = (acSelected ? acCost : 0) + (lockerSelected ? lockerCost : 0);
+          const totalRoomCost = roomRate * totalDays;
+          const totalAmenitiesCost = amenitiesCost * totalDays;
+          const extraPersonsCost = totalPersons > 2 ? (totalPersons - 2) * extraPersonCost * totalDays : 0;
+          const totalCost = totalRoomCost + totalAmenitiesCost + extraPersonsCost;
+
+          const balance = totalCost - advanceAmount;
+
+          document.getElementById("totalRoomCost").textContent = totalRoomCost;
+          document.getElementById("totalAmenitiesCost").textContent = totalAmenitiesCost;
+          document.getElementById("totalCost").textContent = totalCost;
+          document.getElementById("extraPersonsCost").textContent = extraPersonsCost;
+          document.getElementById("balance").textContent = balance;
+      }
+  </script>
+</head>
+<body>
+
+   <header class="header">
+
+      <a href="#" class="logo"> <i class="fas fa-hotel"></i> Hotel 3 Star </a>
+
+      <nav class="navbar">
+         <a href="#home">home</a>
+         <a href="#about">about</a>
+         <a href="#reservation" class="btn"> book now</a>
+      </nav>
+
+   </header>
+
+   <section class="home" id="home">
+            <div class="slide" style="background: url(images/home-slide1.jpg) no-repeat;"></div>
+   </section>
+
+   <section class="about" id="about">
+
+      <div class="row">
+
+         <div class="image">
+            <img src="images/about.jpg" alt="">
+         </div>
+
+         <div class="content">
+            <h3>about us</h3>
+            <p>Hotel 3 star, dolor sit amet consectetur adipisicing elit. Ratione nesciunt blanditiis maxime natus repudiandae veritatis alias laboriosam neque cum! Est adipisci assumenda, ad debitis iusto laudantium repellat aliquam dolore voluptates.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione nesciunt blanditiis maxime natus repudiandae veritatis alias laboriosam neque cum! Est adipisci assumenda, ad debitis iusto laudantium repellat aliquam dolore voluptates.</p>
+         </div>
+
+      </div>
+      <br><br><br><br><br><br><br><br>
+   </section>
+
+   <section class="reservation" id="reservation">
+      
+      <h1 class="heading">book now</h1>
+
+      <form>
+         <label for="customerName"><p>Customer Name:<span>*</span></p></label>
+         <input type="text" id="customerName" required><br><br>
+ 
+         <label for="checkInDate"><p>Check-in Date:<span>*</span></p></label>
+         <input type="date" id="checkInDate" required><br><br>
+ 
+         <label for="totalDays"><p>Total No of Days:<span>*</span></p></label>
+         <input type="number" id="totalDays" required><br><br>
+ 
+         <label for="totalPersons"><p>Total No of Persons:<span>*</span></p></label>
+         <input type="number" id="totalPersons" required><br><br>
+ 
+         <label for="roomType"><p>Room Type:</p></label>
+         <select id="roomType">
+             <option value="Delux Room">Delux Room</option>
+             <option value="Suite Room">Suite Room</option>
+         </select><br><br>
+ 
+         
+         <input type="checkbox" id="ac"><label for="ac"><p>AC:</p></label><br><br>
+ 
+         <label for="locker"><p>Locker:</p></label>
+         <input type="checkbox" id="locker"><br><br>
+ 
+         <label for="advanceAmount"><p>Advance Amount:</p></label>
+         <input type="number" id="advanceAmount"><br><br>
+ 
+         <button type="button" onclick="calculateTotalCost()"><p>Calculate Total Cost</p></button>
+         <button type="submit" onclick="alert('Booking successful! Thank you for your reservation.')"><p>Submit Reservation</p></button>
+     </form>
+ 
+     <h2>Cost Details</h2>
+     <p>Total Room Cost: <span id="totalRoomCost">0</span></p>
+     <p>Total Amenities Cost: <span id="totalAmenitiesCost">0</span></p>
+     <p>Extra Persons Cost: <span id="extraPersonsCost">0</span></p>
+     <p>Total Cost: <span id="totalCost">0</span></p>
+     <p>Balance: <span id="balance">0</span></p>
+ 
+   </section>
+   
+</body>
+</html>
